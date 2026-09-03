@@ -1,5 +1,5 @@
 # Nombre de Repositorio: App_Duplicated_Screen
-Duplicacion de Pantalla de una aplicacion web para practica personal
+-Vision: Desarrollo de una aplicacion para practica personal.
 
 # Descripcion de Trabajo
 En este caso el principal repositorio es para tener un buen uso de estas herramientas con la cual estaremos interactuando a diario en un futuro
