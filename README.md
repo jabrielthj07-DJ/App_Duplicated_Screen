@@ -1,4 +1,4 @@
-# App_Duplicated_Screen
+# Nombre de Repositorio: App_Duplicated_Screen
 Duplicacion de Pantalla de una aplicacion web para practica personal
 
 # Descripcion de Trabajo
