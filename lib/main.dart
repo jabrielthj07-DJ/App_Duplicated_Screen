@@ -90,6 +90,41 @@ class HomeScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 15),
+
+                            // Tipos de comida
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _foodIcon(Icons.local_dining, "Postres"),
+                  _foodIcon(Icons.icecream, "Helado"),
+                  _foodIcon(Icons.local_pizza, "Pizza"),
+                  _foodIcon(Icons.coffee, "Café"),
+                  _foodIcon(Icons.lunch_dining, "Hamburguesa"),
+                ],
+              ),
+
+                            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Articulo Popular",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const Text(
+                    "Articulo en Tendencia",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+
+
             ],
            
           ),
@@ -99,6 +134,9 @@ class HomeScreen extends StatelessWidget {
     );
 
   }
+
+
+// Metodos para crear los widgets de categorias y comida, proximamente tarjetas
 
 // Categorías
     static Widget _category(String text, bool selected) {
@@ -128,5 +166,27 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  // Iconos de comida
+  static Widget _foodIcon(IconData icon, String text) {
+    return Column(
+      children: [
+        Icon(
+          icon,
+          size: 30,
+        ),
+
+        const SizedBox(height: 5),
+
+        Text(
+          text,
+          style: const TextStyle(
+            fontSize: 11,
+          ),
+        ),
+      ],
+    );
+  }
+
 }
 
