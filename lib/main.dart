@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-    ),
+    const MaterialApp(home: HomeScreen(), ),
   );
 }
 
@@ -19,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(15),
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,18 +73,18 @@ class HomeScreen extends StatelessWidget {
               ),
                 Row(
                 children: [
-                  _category("Comidas", true),
-                  _category("Comestibles", false),
-                  _category("Medicina", false),
+                  _category("Comidas", true), // _category es un metodo que tenemos abajo de categorias
+                  _category("Bebidas", false),
+                  _category("Accesorios", false),
                 ],
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 26),
 
               const Text(
                 "Comidas Populares",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -103,19 +100,20 @@ class HomeScreen extends StatelessWidget {
 
   }
 
+// Categorías
     static Widget _category(String text, bool selected) {
     return Container(
-      margin: const EdgeInsets.only(right: 8),
+      margin: const EdgeInsets.only(right: 7), // Espaciado entre las catgeorias
 
-      padding: const EdgeInsets.symmetric(
-        horizontal: 18,
-        vertical: 10,
+      padding: const EdgeInsets.symmetric( // tama;o del espacio osea dentro del contenedor
+        horizontal: 12, 
+        vertical: 8,
       ),
 
       decoration: BoxDecoration(
-        color: selected ? Colors.green : Colors.white,
+        color: selected ? Colors.green : Colors.white, // Recordar cambiar con el original, paleta igual
 
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(22),
 
         border: Border.all(
           color: Colors.grey.shade400,
@@ -125,7 +123,7 @@ class HomeScreen extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: selected ? Colors.white : Colors.black,
+          color: selected ? Colors.white : Colors.black, // Cuando selecionan se pone blanco y cuando no se pone negro...
         ),
       ),
     );
