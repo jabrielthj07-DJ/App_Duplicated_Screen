@@ -74,10 +74,61 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+                Row(
+                children: [
+                  _category("Comidas", true),
+                  _category("Comestibles", false),
+                  _category("Medicina", false),
+                ],
+              ),
+
+              const SizedBox(height: 25),
+
+              const Text(
+                "Comidas Populares",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 15),
             ],
+           
           ),
+          
+        ),
+      ),
+    );
+
+  }
+
+    static Widget _category(String text, bool selected) {
+    return Container(
+      margin: const EdgeInsets.only(right: 8),
+
+      padding: const EdgeInsets.symmetric(
+        horizontal: 18,
+        vertical: 10,
+      ),
+
+      decoration: BoxDecoration(
+        color: selected ? Colors.green : Colors.white,
+
+        borderRadius: BorderRadius.circular(25),
+
+        border: Border.all(
+          color: Colors.grey.shade400,
+        ),
+      ),
+
+      child: Text(
+        text,
+        style: TextStyle(
+          color: selected ? Colors.white : Colors.black,
         ),
       ),
     );
   }
 }
+
