@@ -90,15 +90,109 @@ class HomeScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 15),
-            ],
+
+                            // Tipos de comida
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _foodIcon(Icons.local_dining, "Postres"),
+                  _foodIcon(Icons.icecream, "Helado"),
+                  _foodIcon(Icons.local_pizza, "Pizza"),
+                  _foodIcon(Icons.coffee, "Café"),
+                  _foodIcon(Icons.lunch_dining, "Hamburguesa"),
+                ],
+              ),
+
+                            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Articulo Popular",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const Text(
+                    "Articulo en Tendencia",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+
+// Tarjetas productos o comidas
+              Row(
+                children: [
+                  Expanded(
+                    child: _productCard(
+                      "Pizza de Pepperoni",
+                      "15 Mins",
+                      "4.7",
+                    ),
+                  ),
+
+ const SizedBox(width: 15),
+
+                  Expanded(
+                    child: _productCard(
+                      "Hamburguesa con Queso",
+                      "12 Mins",
+                      "4.5",
+                    ),
+                  ),
+                ],
+              ),
+
+              
+                  const Text(
+                    "Articulo en Tendencia",
+                    style: TextStyle(
+                      fontSize: 13,
+                    ),
+                  ),
+
+            ], // Fin de los widgets hijos de la columna convinada con rows
            
           ),
           
         ),
       ),
-    );
 
-  }
+          // Barra inferior
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.grey,
+
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Inicio",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
+            label: "Favoritos",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.receipt_long),
+            label: "Ordenar",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: "Perfil",
+          ),
+        ],
+      ),
+    );
+  } 
+
+
+
+// Metodos para crear los widgets de categorias y comida, proximamente tarjetas
 
 // Categorías
     static Widget _category(String text, bool selected) {
@@ -128,5 +222,105 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}
+
+  // Iconos de comida
+  static Widget _foodIcon(IconData icon, String text) {
+    return Column(
+      children: [
+        Icon(
+          icon,
+          size: 30,
+        ),
+
+        const SizedBox(height: 5),
+
+        Text(
+          text,
+          style: const TextStyle(
+            fontSize: 11,
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Tarjeta de producto
+  static Widget _productCard(
+    String name,
+    String time,
+    String rating,
+  ) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade200,
+            blurRadius: 5,
+          ),
+        ],
+      ),
+
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(12),
+            ),
+
+            child: const Center(
+              child: Icon(
+                Icons.fastfood,
+                size: 50,
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 8),
+
+          Text(
+            name,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+          const SizedBox(height: 5),
+
+          Text(
+            "⏲ $time",
+            style: const TextStyle(
+              color: Colors.grey,
+              fontSize: 12,
+            ),
+          ),
+
+          Text(
+            "⭐ $rating",
+            style: const TextStyle(
+              fontSize: 12,
+            ),
+          ),
+
+          const SizedBox(height: 5),
+
+          const Text(
+            "\C\$12.99",
+            style: TextStyle(
+              color: Colors.green,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+} // por si las moscas, aqui cierra la clase Homescren
 
