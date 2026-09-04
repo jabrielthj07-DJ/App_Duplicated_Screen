@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                       ),
 
                       Text(
-                        "Managua Nicaragua",
+                        "Jinotepe, Nicaragua",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 27),
 
               // Buscador
               TextField(
@@ -71,6 +71,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
+                const SizedBox(height: 25),
                 Row(
                 children: [
                   _category("Comidas", true), // _category es un metodo que tenemos abajo de categorias
@@ -89,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 15),
+              const SizedBox(height: 20),
 
                             // Tipos de comida
               Row(
@@ -102,12 +104,15 @@ class HomeScreen extends StatelessWidget {
                   _foodIcon(Icons.lunch_dining, "Hamburguesa"),
                 ],
               ),
+  const SizedBox(height: 22),
 
                             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                
                 children: [
+                  
                   const Text(
-                    "Articulo Popular",
+                    "producto Popular",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -115,8 +120,9 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   const Text(
-                    "Articulo en Tendencia",
+                  "producto Tendencia",
                     style: TextStyle(
+                      
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -124,6 +130,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
 
+  const SizedBox(height: 15),
 // Tarjetas productos o comidas
               Row(
                 children: [
@@ -147,11 +154,13 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
 
+              const SizedBox(height: 15),
               
                   const Text(
-                    "Articulo en Tendencia",
+                    "                  Oferta solo hoy ! -  50% de descuento",
                     style: TextStyle(
                       fontSize: 13,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
 
@@ -296,7 +305,7 @@ class HomeScreen extends StatelessWidget {
           Text(
             "⏲ $time",
             style: const TextStyle(
-              color: Colors.grey,
+              color: Color.fromARGB(255, 29, 77, 31),
               fontSize: 12,
             ),
           ),
@@ -313,7 +322,7 @@ class HomeScreen extends StatelessWidget {
           const Text(
             "\C\$12.99",
             style: TextStyle(
-              color: Colors.green,
+              color: Color.fromARGB(255, 29, 77, 31),
               fontWeight: FontWeight.bold,
             ),
           ),
