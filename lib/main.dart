@@ -147,6 +147,14 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
 
+              
+                  const Text(
+                    "Articulo en Tendencia",
+                    style: TextStyle(
+                      fontSize: 13,
+                    ),
+                  ),
+
             ], // Fin de los widgets hijos de la columna convinada con rows
            
           ),
@@ -303,7 +311,7 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(height: 5),
 
           const Text(
-            "\$12.99",
+            "\C\$12.99",
             style: TextStyle(
               color: Colors.green,
               fontWeight: FontWeight.bold,
